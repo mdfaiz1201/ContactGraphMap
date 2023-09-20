@@ -11,7 +11,7 @@ A web application built using ReacJS, TailwindCSS, Redux toolkit, React Router, 
 - Features a form for adding new contacts.
 - Displays a list of all added contacts.
 - Edit and delete contacts effortlessly.
-- Each contact has a button to view contact details.
+- Each contact name has link to view contact details.
 
 ### Page: Charts and Maps
 
