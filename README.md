@@ -1,4 +1,5 @@
 # Contact Management App with Charts and Maps
+
 A web application built using ReacJS, TailwindCSS, Redux toolkit, React Router, GraphQL and React Leaflet to manage contacts and display COVID-19 data using charts and maps.
 
 ## Objective
