@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
 import MainDashboard from './Main/MainDashboard';
-import { CreateButton, ContactForms, ContactDetails, ChartsAndMaps } from './pages';
+import { CreateButton, ContactForms, ContactDetails, CovidGraph } from './pages';
 import { Header, Footer, PageNotFound } from './components';
 
 
@@ -16,7 +16,7 @@ function App() {
                <Route path="/" element ={<CreateButton/>}/>  
                <Route path="/form" element ={<ContactForms />}/>  
                <Route path="/contactDetails/:id" element ={<ContactDetails />}/> 
-               <Route path="/chartsAndMaps" element ={<ChartsAndMaps />}/>   
+               <Route path="/covidGraph" element ={<CovidGraph />}/>   
             </Route>
             <Route path="*" element ={<PageNotFound/>}/>
          </Routes>

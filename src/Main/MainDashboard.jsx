@@ -10,8 +10,8 @@ const MainDashboard = () => {
          <NavLink className="nav border md:border-r-0 p-4" to="/">
             Contact
          </NavLink>
-         <NavLink to="/chartsAndMaps" className="nav border md:border-r-0 p-4">
-            Charts and Maps
+         <NavLink to="/covidGraph" className="nav border md:border-r-0 p-4">
+            Covid 19 Graph
          </NavLink>
       </nav>
       <div className="md:flex-1 min-h-screen text-center py-12">

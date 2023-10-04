@@ -38,14 +38,19 @@
       transform: scale(0);
    }
 }
-/* @keyframes slowOpen {
-   0%{
-      transform: scale(0.8);
+
+/* Chart.js */
+.custom-height{
+   height: 75vh;
+}
+.animate-blink{
+   animation: blink infinite 1s;
+}
+@keyframes blink {
+   50%{
+      opacity: 0;
    }
-   100% {
-      transform: none;
+   100%{
+      opacity: 1;
    }
 }
-.form-mnl {
-   animation: slowOpen 0.3s linear;
-} */

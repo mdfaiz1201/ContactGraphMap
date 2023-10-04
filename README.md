@@ -17,11 +17,12 @@ A web application built using ReacJS, TailwindCSS, Redux toolkit, React Router, 
 ### Page: Charts and Maps
 
 - Dashboard with a line graph showing COVID-19 cases fluctuations.
-- Interactive map using React Leaflet with markers indicating country names, total active cases, recoveries, and deaths.
-- Dummy JSON Data sources:
+- Interactive using GraphQL line graph indicating country names, total cases, active, recoveries, and deaths.
+- Filter the line graph to show only active or total cases or recovered and deaths.
+- Real-time live Data sources:
   - World-wide COVID-19 data.
   - Country-specific COVID-19 data.
-  - Graph data for cases with date
+  - Graph data for cases with date.
 
 
 ## Getting Started

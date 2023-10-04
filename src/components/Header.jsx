@@ -10,7 +10,7 @@ const Header = () => {
          {  location.pathname === "/" ? "Contact Page" :
             location.pathname === "/form" ? "Contact Form" :
             location.pathname === `/contactDetails/${id}` ? "Contact Details" :  
-            location.pathname === "/chartsAndMaps" ? "Charts and Maps" : null}
+            location.pathname === "/covidGraph" ? "Covid 19 Live Data" : null}
       </header>
   )
 }
