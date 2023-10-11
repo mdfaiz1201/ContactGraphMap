@@ -8,7 +8,7 @@ const MainDashboard = () => {
    <div className="flex md:flex-row flex-col">
       <nav className="w-auto m-auto md:m-0 md:w-40 flex md:flex-col font-semibold border-r border-gray-300 gap-4">
          <NavLink className="nav border md:border-r-0 p-4" to="/">
-            Contact
+            Contact List
          </NavLink>
          <NavLink to="/covidGraph" className="nav border md:border-r-0 p-4">
             Covid 19 Graph

@@ -4,7 +4,7 @@ A web application built using ReacJS, TailwindCSS, Redux toolkit, React Router, 
 
 ## Objective
 
-### Page: Contacts
+### Page: Contact Management
 
 - Create and manage your contacts with ease.
 - Responsive design for both desktop and mobile devices.
@@ -14,12 +14,12 @@ A web application built using ReacJS, TailwindCSS, Redux toolkit, React Router, 
 - Edit and delete contacts effortlessly.
 - Each contact name has link to view contact details.
 
-### Page: Charts and Maps
+### Page: Covid 19 Graph
 
-- Dashboard with a line graph showing COVID-19 cases fluctuations.
+- Dashboard with a line graph showing LIVE COVID-19 cases fluctuations for 238 countries.
 - Interactive using GraphQL line graph indicating country names, total cases, active, recoveries, and deaths.
 - Filter the line graph to show only active or total cases or recovered and deaths.
-- Real-time live Data sources:
+- Real-time LIVE cases using the Rapid API Data for COVID-19. :
   - World-wide COVID-19 data.
   - Country-specific COVID-19 data.
   - Graph data for cases with date.

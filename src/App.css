@@ -41,7 +41,7 @@
 
 /* Chart.js */
 .custom-height{
-   height: 75vh;
+   height: 70vh;
 }
 .animate-blink{
    animation: blink infinite 1s;
