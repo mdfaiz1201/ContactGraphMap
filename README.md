@@ -1,6 +1,6 @@
 # Contact Management App with Charts and Maps
 
-A web application built using ReactJS, TailwindCSS, Redux toolkit, React Router and GraphQL to manage contacts and display COVID-19 data using charts and maps.
+A web application built using ReactJS, TailwindCSS, Redux toolkit, React Router and GraphQL to manage contacts and display LIVE COVID-19 data using Line Graph.
 
 ## Screenshot
 
@@ -16,10 +16,9 @@ A web application built using ReactJS, TailwindCSS, Redux toolkit, React Router 
 
 ![image](https://github.com/mdfaiz1201/ContactGraphMap/assets/69683571/87c474c6-efd1-4d4d-a220-e46eea6635bb)
 
-![image](https://github.com/mdfaiz1201/ContactGraphMap/assets/69683571/dd418a86-9740-44c4-9fd2-2e7a0deef7c8)
+![image](https://github.com/mdfaiz1201/ContactGraphMap/assets/69683571/62f8cfb5-7cb7-4428-ab41-2591faa333b0)
 
-![image](https://github.com/mdfaiz1201/ContactGraphMap/assets/69683571/6d0ceb8a-421c-4f2e-8eee-071f757682a5)
-
+![image](https://github.com/mdfaiz1201/ContactGraphMap/assets/69683571/154b9790-8154-4b97-864c-290d3bb70b99)
 
 ## Objective
 
