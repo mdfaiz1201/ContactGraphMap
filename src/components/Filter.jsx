@@ -12,7 +12,7 @@ const Filter = ({filterData}) => {
 
 
    return (
-   <div className='px-3 py-1'>
+   <div className=' self-start px-3 py-1'>
       <select value={selected} onChange={handleChange} className='px-3 py-1 bg-gray-200 border-0 cursor-pointer'>
          <option>All</option>
          <option>Active</option>
