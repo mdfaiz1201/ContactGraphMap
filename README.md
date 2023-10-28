@@ -14,7 +14,7 @@ A web application built using ReactJS, TailwindCSS, Redux toolkit, React Router 
 
 ![image](https://github.com/mdfaiz1201/ContactGraphMap/assets/69683571/3c686894-54ee-44ef-be99-6205fcc881f6)
 
-![image](https://github.com/mdfaiz1201/ContactGraphMap/assets/69683571/87c474c6-efd1-4d4d-a220-e46eea6635bb)
+![image](https://github.com/mdfaiz1201/ContactGraphMap/assets/69683571/fc77f04f-2de2-4bb9-b9e0-036422f76e8f)
 
 ![image](https://github.com/mdfaiz1201/ContactGraphMap/assets/69683571/62f8cfb5-7cb7-4428-ab41-2591faa333b0)
 
