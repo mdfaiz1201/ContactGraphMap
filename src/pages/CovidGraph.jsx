@@ -49,52 +49,108 @@ const CovidGraph = () => {
    const [currentDate, setCurrentDate] = useState(null);
    const [covidData, setCovidData] = useState([]);
    const [allData, setAllData] = useState([]);
+   const [resetToggle, setResetToggle] = useState(false);
    
-   useEffect(()=>{
-      const storedData = localStorage.getItem('covidData');
-      if (!storedData){
-         fetchFromAPI('statistics')
-         .then(result=>{
-            const response = result.response
-            setCovidData(response)
-            localStorage.setItem('covidData', JSON.stringify(response));
-            }
-         )
-      }
-      else{
-         const parsedData = JSON.parse(storedData);
-         setCovidData(parsedData);
-      }
-   },[])
+   // useEffect(()=>{
+   //    fetchFromAPI('statistics')
+   //       .then(result=>{
+   //          const response = result.response
+   //          setCovidData(response)
+   //       })
+   //    const storedData = localStorage.getItem('covidData');
+   //    if (!storedData){
+   //       fetchFromAPI('statistics')
+   //       .then(result=>{
+   //          const response = result.response
+   //          setCovidData(response)
+   //          localStorage.setItem('covidData', JSON.stringify(response));
+   //          }
+   //       )
+   //    }
+   //    else{
+   //       const parsedData = JSON.parse(storedData);
+   //       setCovidData(parsedData);
+   //    }
+   // },[])
 
-   useEffect(()=>{
-      const storedCount =localStorage.getItem("count");
-      if (!storedCount){
-         localStorage.setItem('count', count);      
+   // useEffect(()=>{
+   //    const storedCount =localStorage.getItem("count");
+   //    if (!storedCount){
+   //       localStorage.setItem('count', count);      
+   //    }
+   //    else{
+   //       count === 0 ? setCount(parseInt(storedCount)-8) : localStorage.setItem('count', count)
+   //    }
+   //    const dataItem = covidData[count]
+   //    setCurrentDate(dataItem?.day)
+   //    if (dataItem && allData.length <= 7 && dataItem?.country !== "All"){
+   //       setAllData([...allData, 
+   //       {'country' : dataItem?.country, 'cases':
+   //          { "Active": dataItem?.cases?.active || 0,
+   //             "Recover": dataItem?.cases?.recovered || 0,
+   //             "Death": dataItem?.deaths?.total || 0,
+   //             "TotalCases": dataItem?.cases?.total || 0
+   //          }
+   //       }
+   //       ])
+   //       setCount(count+1);
+   //    }
+   // },[allData,covidData, count])
+
+
+
+
+   useEffect(() => {
+      fetchFromAPI('statistics')
+          .then(result => {
+              const response = result.response;
+              setCovidData(response);
+          });
+  
+      const storedData = sessionStorage.getItem('covidData'); // Use sessionStorage instead of localStorage
+      if (!storedData) {
+          fetchFromAPI('statistics')
+              .then(result => {
+                  const response = result.response;
+                  setCovidData(response);
+                  sessionStorage.setItem('covidData', JSON.stringify(response)); // Use sessionStorage
+              });
+      } else {
+          const parsedData = JSON.parse(storedData);
+          setCovidData(parsedData);
       }
-      else{
-         count === 0 ? setCount(parseInt(storedCount)-8) : localStorage.setItem('count', count)
+  }, []);
+  
+  useEffect(() => {
+      const storedCount = sessionStorage.getItem("count"); // Use sessionStorage
+      if (!storedCount) {
+          sessionStorage.setItem('count', count); // Use sessionStorage
+      } else {
+          count === 0 ? setCount(parseInt(storedCount) - 8) : sessionStorage.setItem('count', count); // Use sessionStorage
       }
-      const dataItem = covidData[count]
-      setCurrentDate(dataItem?.day)
-      if (dataItem && allData.length <= 7 && dataItem?.country != "All"){
-         setAllData([...allData, 
-         {'country' : dataItem?.country, 'cases':
-            { "Active": dataItem?.cases?.active || 0,
-               "Recover": dataItem?.cases?.recovered || 0,
-               "Death": dataItem?.deaths?.total || 0,
-               "TotalCases": dataItem?.cases?.total || 0
-            }
-         }
-         ])
-         setCount(count+1);
+  
+      const dataItem = covidData[count];
+      setCurrentDate(dataItem?.day);
+      if (dataItem && allData.length <= 7 && dataItem?.country !== "All") {
+          setAllData([...allData, {
+              'country': dataItem?.country,
+              'cases': {
+                  "Active": dataItem?.cases?.active || 0,
+                  "Recover": dataItem?.cases?.recovered || 0,
+                  "Death": dataItem?.deaths?.total || 0,
+                  "TotalCases": dataItem?.cases?.total || 0
+              }
+          }]);
+          setCount(count + 1);
       }
-   },[covidData, count])
+  }, [allData, covidData, count]);
+  
+
 
    useEffect(() => {
       if (showData){
          const newData = data.datasets.map((dataset)=>(
-            {... dataset, hidden: showData === 'All' ? false : dataset.label !== showData} 
+            {...dataset, hidden: showData === 'All' ? false : dataset.label !== showData}
             ))
             setNewDatasets(newData)
          }
@@ -149,6 +205,7 @@ const CovidGraph = () => {
    const handleNext = () => {
       setAllData([])
       setNewDatasets(null)
+      setResetToggle(!resetToggle)
       if (count>=7){
          setCount(count-1)
       }
@@ -164,7 +221,7 @@ const CovidGraph = () => {
                      <span className='h-2 w-2 rounded-full bg-red-600 mr-1'></span>LIVE
                   </span>
                </div>
-               <Filter filterData={setShowData}/>
+               <Filter setResetToggle={setResetToggle} defaultValue={resetToggle ? "All" : undefined} filterData={setShowData} />
             </div>
             <div className='mt-2 custom-height'>
                <Line options={options} data={data} />

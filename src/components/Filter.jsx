@@ -1,13 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Filter = ({filterData}) => {
-   const [selected, setSelected] = useState('') 
-
+const Filter = ({defaultValue, filterData, setResetToggle}) => {
+   const [selected, setSelected] = useState(defaultValue || '') 
+   useEffect(() => {
+     setSelected(defaultValue)
+     filterData(null)
+     setResetToggle(false)
+   }, [defaultValue])
+   
    const handleChange =(e) => {
       setSelected(e.target.value)
       filterData(e.target.value)
-      
    }
+   // const [selected, setSelected] = useState('') 
+
+   // const handleChange =(e) => {
+   //    setSelected(e.target.value)
+   //    filterData(e.target.value)
+   // }
    
 
 

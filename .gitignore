@@ -10,7 +10,6 @@
 
 # production
 /build
-env.js
 
 
 # misc
@@ -23,3 +22,6 @@ env.js
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#Key ignore file
+env.js
