@@ -51,55 +51,6 @@ const CovidGraph = () => {
    const [allData, setAllData] = useState([]);
    const [resetToggle, setResetToggle] = useState(false);
    
-   // useEffect(()=>{
-   //    fetchFromAPI('statistics')
-   //       .then(result=>{
-   //          const response = result.response
-   //          setCovidData(response)
-   //       })
-   //    const storedData = localStorage.getItem('covidData');
-   //    if (!storedData){
-   //       fetchFromAPI('statistics')
-   //       .then(result=>{
-   //          const response = result.response
-   //          setCovidData(response)
-   //          localStorage.setItem('covidData', JSON.stringify(response));
-   //          }
-   //       )
-   //    }
-   //    else{
-   //       const parsedData = JSON.parse(storedData);
-   //       setCovidData(parsedData);
-   //    }
-   // },[])
-
-   // useEffect(()=>{
-   //    const storedCount =localStorage.getItem("count");
-   //    if (!storedCount){
-   //       localStorage.setItem('count', count);      
-   //    }
-   //    else{
-   //       count === 0 ? setCount(parseInt(storedCount)-8) : localStorage.setItem('count', count)
-   //    }
-   //    const dataItem = covidData[count]
-   //    setCurrentDate(dataItem?.day)
-   //    if (dataItem && allData.length <= 7 && dataItem?.country !== "All"){
-   //       setAllData([...allData, 
-   //       {'country' : dataItem?.country, 'cases':
-   //          { "Active": dataItem?.cases?.active || 0,
-   //             "Recover": dataItem?.cases?.recovered || 0,
-   //             "Death": dataItem?.deaths?.total || 0,
-   //             "TotalCases": dataItem?.cases?.total || 0
-   //          }
-   //       }
-   //       ])
-   //       setCount(count+1);
-   //    }
-   // },[allData,covidData, count])
-
-
-
-
    useEffect(() => {
       fetchFromAPI('statistics')
           .then(result => {
@@ -107,13 +58,13 @@ const CovidGraph = () => {
               setCovidData(response);
           });
   
-      const storedData = sessionStorage.getItem('covidData'); // Use sessionStorage instead of localStorage
+      const storedData = sessionStorage.getItem('covidData');
       if (!storedData) {
           fetchFromAPI('statistics')
               .then(result => {
                   const response = result.response;
                   setCovidData(response);
-                  sessionStorage.setItem('covidData', JSON.stringify(response)); // Use sessionStorage
+                  sessionStorage.setItem('covidData', JSON.stringify(response));
               });
       } else {
           const parsedData = JSON.parse(storedData);
@@ -122,11 +73,11 @@ const CovidGraph = () => {
   }, []);
   
   useEffect(() => {
-      const storedCount = sessionStorage.getItem("count"); // Use sessionStorage
+      const storedCount = sessionStorage.getItem("count");
       if (!storedCount) {
-          sessionStorage.setItem('count', count); // Use sessionStorage
+          sessionStorage.setItem('count', count);
       } else {
-          count === 0 ? setCount(parseInt(storedCount) - 8) : sessionStorage.setItem('count', count); // Use sessionStorage
+          count === 0 ? setCount(parseInt(storedCount) - 8) : sessionStorage.setItem('count', count);
       }
   
       const dataItem = covidData[count];
@@ -145,8 +96,6 @@ const CovidGraph = () => {
       }
   }, [allData, covidData, count]);
   
-
-
    useEffect(() => {
       if (showData){
          const newData = data.datasets.map((dataset)=>(

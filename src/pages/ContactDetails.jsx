@@ -7,7 +7,6 @@ const ContactDetails = () => {
 
    const { id } = useParams();
    const contact= contacts[id];
-   // console.log(contact)
 
    return (
       <section className='border shadow border-red-900 p-10 xs:mx-1 sm:mx-5 md:mx-auto md:w-2/4'>
