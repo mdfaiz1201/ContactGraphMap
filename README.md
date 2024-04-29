@@ -1,6 +1,6 @@
-# Contact Management App with Charts and Maps
+# Contact Management & Live COVID-19 Graphs
 
-A web application built using ReactJS, TailwindCSS, Redux toolkit, React Router and GraphQL to manage contacts and display LIVE COVID-19 data using Line Graph.
+A web application was developed using ReactJS, TailwindCSS, Redux Toolkit, React Router, and Chart.js to manage contacts and display LIVE COVID-19 data through Line Graphs.
 
 ## Screenshot
 
@@ -35,7 +35,7 @@ A web application built using ReactJS, TailwindCSS, Redux toolkit, React Router 
 ### Page: Covid 19 Graph
 
 - Dashboard with a line graph showing LIVE COVID-19 cases fluctuations for 238 countries.
-- Interactive using GraphQL line graph indicating country names, total cases, active, recoveries, and deaths.
+- Line graph indicating Total cases, Active cases, Country names, Recoveries, and Deaths
 - Filter the line graph to show only active or total cases or recovered and deaths.
 - Real-time LIVE cases using the Rapid API Data for COVID-19. :
   - World-wide COVID-19 data.
