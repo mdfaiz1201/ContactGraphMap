@@ -147,6 +147,7 @@ const CovidGraph = () => {
    const handlePrevious = () => {
       setAllData([])
       setNewDatasets(null)
+      setResetToggle(!resetToggle)
       if (count >= 8){
          setCount(count - 15)
       }
@@ -173,10 +174,11 @@ const CovidGraph = () => {
                <Filter setResetToggle={setResetToggle} defaultValue={resetToggle ? "All" : undefined} filterData={setShowData} />
             </div>
             <div className='mt-2 custom-height'>
-               <Line options={options} data={data} />
+               <Line aria-label='Graph showing COVID-19 data trends by country' options={options} data={data} />
             </div>
             <div className='mt-5 flex items-center justify-center'>
                <button disabled = {count<=8}
+                  aria-label="Previous button"
                   onClick={handlePrevious}
                   className={`${count<=8 ? 'bg-gray-300' : 'bg-gray-500 hover:shadow-lg'} text-white rounded mr-3 text-xl border py-1 px-2`}>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -184,6 +186,7 @@ const CovidGraph = () => {
                   </svg>
                </button>
                <button disabled = {count >= 234}
+                  aria-label="Next button"
                   onClick={handleNext} 
                   className={`${count >= 234 ? 'bg-gray-300' : 'bg-gray-500 hover:shadow-lg'} ml-3 text-white rounded hover:shadow-lg text-xl border py-1 px-2`}>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

@@ -15,7 +15,7 @@ const Filter = ({defaultValue, filterData, setResetToggle}) => {
    
    return (
    <div className=' self-start px-3 py-1'>
-      <select value={selected} onChange={handleChange} className='px-3 py-1 bg-gray-200 border-0 cursor-pointer'>
+      <select title="Select data filter" value={selected} onChange={handleChange} className='px-3 py-1 bg-gray-200 border-0 cursor-pointer'>
          <option>All</option>
          <option>Active</option>
          <option>Total Cases</option>
